@@ -15,6 +15,29 @@ cd laravel-sail-example-app && ./vendor/bin/sail up -d
 
 [https://laravel.build/example-app?with=mysql,pgsql,mariadb,redis,memcached,meilisearch,minio,selenium,mailhog](https://laravel.build/example-app?with=mysql,pgsql,mariadb,redis,memcached,meilisearch,minio,selenium,mailhog) のようにカンマ区切りで指定。デフォルト値は `mysql,redis,meilisearch,mailhog,selenium`
 
+## phpMyAdmin
+
+- docker-compose.yml
+
+```yaml
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links:
+            - mysql:mysql
+        ports:
+            - 8000:80
+        environment:
+            PMA_USER: "${DB_USERNAME}"
+            PMA_PASSWORD: "${DB_PASSWORD}"
+            PMA_HOST: mysql
+        networks:
+            - sail
+```
+
+- [http://localhost:8000](http://localhost:8000) へアクセスして動作確認
+  - sail
+  - password
+
 ## Laravel Breeze のインストール
 
 ```bash
