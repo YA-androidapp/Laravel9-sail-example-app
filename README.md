@@ -28,6 +28,14 @@ cd laravel-sail-example-app && ./vendor/bin/sail up -d
 - [http://localhost/register](http://localhost/register) へアクセスしてユーザー登録
 - [http://localhost/login](http://localhost/login) へアクセスしてサインイン
 
+## Laravel Lang のインストール
+
+```bash
+./vendor/bin/sail composer require laravel-lang/publisher laravel-lang/lang --dev
+./vendor/bin/sail php artisan lang:add ja
+# ./vendor/bin/sail php artisan lang:update
+```
+
 ---
 
 Copyright (c) 2022 YA-androidapp(https://github.com/YA-androidapp) All rights reserved.
