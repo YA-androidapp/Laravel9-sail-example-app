@@ -59,6 +59,12 @@ cd laravel-sail-example-app && ./vendor/bin/sail up -d
 # ./vendor/bin/sail php artisan lang:update
 ```
 
+## CRUD アプリケーションの実装
+
+```bash
+./vendor/bin/sail php artisan make:model Item -m -c
+```
+
 ---
 
 Copyright (c) 2022 YA-androidapp(https://github.com/YA-androidapp) All rights reserved.
