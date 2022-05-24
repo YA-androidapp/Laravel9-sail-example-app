@@ -71,6 +71,12 @@ nano ./database/migrations/2022_05_24_122436_create_items_table.php
     # $table->foreignId('user_id')->comment('ユーザーID')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
 
 ./vendor/bin/sail php artisan migrate
+
+nano ./database/seeders/DatabaseSeeder.php
+    # 追記
+
+./vendor/bin/sail php artisan db:seed
+# ./vendor/bin/sail php artisan migrate:fresh --seed # リセットしたい場合
 ```
 
 ---
