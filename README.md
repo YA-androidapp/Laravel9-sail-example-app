@@ -63,6 +63,14 @@ cd laravel-sail-example-app && ./vendor/bin/sail up -d
 
 ```bash
 ./vendor/bin/sail php artisan make:model Item -m -c
+
+nano ./database/migrations/2022_05_24_122436_create_items_table.php
+    # 追記
+    # $table->string('title', 100)->comment('タイトル');
+    # $table->text('content')->comment('コンテンツ');
+    # $table->foreignId('user_id')->comment('ユーザーID')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
+
+./vendor/bin/sail php artisan migrate
 ```
 
 ---

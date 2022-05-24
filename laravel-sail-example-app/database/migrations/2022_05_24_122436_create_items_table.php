@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 100)->comment('タイトル');
+            $table->text('content')->comment('コンテンツ');
+            $table->foreignId('user_id')->comment('ユーザーID')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
