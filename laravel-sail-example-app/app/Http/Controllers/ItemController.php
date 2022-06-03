@@ -36,8 +36,9 @@ class ItemController extends Controller
         return redirect()->route('items')->with('status', 'Created.');
     }
 
-    public function show()
+    public function show(Item $item)
     {
+        return view('items.show', ['item' => $item]);
     }
 
     public function edit()

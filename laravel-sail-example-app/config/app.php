@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Facade;
 
 return [
 
+    // UserPolicy
+    'admin' => [
+        '1',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
