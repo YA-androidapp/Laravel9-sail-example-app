@@ -81,6 +81,7 @@ nano ./database/seeders/DatabaseSeeder.php
 nano ./routes/web.php
 nano ./app/Models/Item.php
 nano ./app/Http/Controllers/ItemController.php
+nano ./resources/views/items/create.blade.php
 nano ./resources/views/items/list.blade.php
 
 ./vendor/bin/sail npm run dev

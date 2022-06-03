@@ -19,12 +19,6 @@
                     <x-nav-link :href="route('items')" :active="request()->routeIs('items')">
                         {{ __('Items') }}
                     </x-nav-link>
-
-                    @auth
-                    <x-nav-link :href="route('user.profile')" :active="request()->routeIs('user.profile')">
-                        {{ __('Profile') }}
-                    </x-nav-link>
-                    @endauth
                 </div>
             </div>
 
@@ -84,12 +78,6 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-
-            @auth
-            <x-responsive-nav-link :href="route('user.profile')" :active="request()->routeIs('user.profile')">
-                {{ __('Profile') }}
-            </x-responsive-nav-link>
-            @endauth
         </div>
 
         <!-- Responsive Settings Options -->

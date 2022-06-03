@@ -9,7 +9,10 @@ class Item extends Model
 {
     use HasFactory;
 
-    public function user() {
+    public $guarded = ['id', 'created_at'];
+
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 }

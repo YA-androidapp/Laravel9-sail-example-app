@@ -9,12 +9,18 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white shadow-sm sm:rounded-lg mb-10">
                 <div class="p-6 flex items-center ">
+                    @if (session('status'))
+                    <div class="text-blue-400 ml-auto">
+                        {{ session('status') }}
+                    </div>
+                    @endif
+
                     <a href="{{ route('items.create') }}">
-                        <button class="rounded bg-blue-400 text-white py-2 px-3">Add an item</button>
+                        <button class="rounded bg-blue-400 text-white py-2 px-3">{{ __('Create') }}</button>
                     </a>
                 </div>
             </div>
-            
+
             <div class="bg-white shadow-sm sm:rounded-lg ">
                 @foreach ($items as $item)
                 <div class="p-6 border-b border-gray-200 flex items-center justify-between">
