@@ -79,7 +79,11 @@ nano ./database/seeders/DatabaseSeeder.php
 # ./vendor/bin/sail php artisan migrate:fresh --seed # リセットしたい場合
 
 nano ./routes/web.php
+nano ./app/Models/Item.php
 nano ./app/Http/Controllers/ItemController.php
+nano ./resources/views/items/list.blade.php
+
+./vendor/bin/sail npm run dev
 ```
 
 ---

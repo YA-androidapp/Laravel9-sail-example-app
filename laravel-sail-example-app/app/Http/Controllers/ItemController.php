@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -13,7 +14,8 @@ class ItemController extends Controller
 
     public function list()
     {
-    
+        $items = Item::orderByDesc('created_at')->with('user')->paginate(5);
+        return view('items.list', ['items' => $items]);
     }
 
     public function create()
