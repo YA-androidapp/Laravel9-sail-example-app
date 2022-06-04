@@ -10,7 +10,7 @@
             <div class="bg-white shadow-sm sm:rounded-lg mb-10">
                 <div x-data="{toggle : false}" class="p-6 flex items-center justify-between">
                     @auth
-                    @can('edit', $post)
+                    @can('edit', $item)
                     <a href="{{ route('items.edit', $item->id) }}">
                         <button class="rounded bg-blue-400 text-white py-2 px-3">{{ __('Edit') }}</button>
                     </a>
@@ -22,13 +22,13 @@
                             <button type="submit" class="py-2 px-3 bg-red-400 rounded-lg text-white">{{ __('Remove') }}</button>
                         </form>
                         <button @click="toggle = false" class="p-2 mx-3 rounded-sm shadow-sm bg-yellow-100">{{ __('Cancel') }}</button>
-                        <p class="text-red-300 ">Are you sure you want to remove this record?</p>
+                        <p class="text-red-300">Are you sure you want to remove this record?</p>
                     </div>
                     @endcan
                     @endauth
                 </div>
             </div>
-            <div class="flex flex-col p-6 bg-white shadow-lg rounded-lg ">
+            <div class="flex flex-col p-6 bg-white shadow-lg rounded-lg">
                 <div class="flex my-3 py-2 items-center justify-between border-b-2">
                     <h2 class="text-lg font-semibold text-gray-900 -mt-1">{{ $item->title }}</h2>
                     <small class="text-sm text-gray-700">{{ $item->updated_at }}</small>

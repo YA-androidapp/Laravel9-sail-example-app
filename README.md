@@ -83,16 +83,19 @@ nano ./app/Models/Item.php
 nano ./app/Http/Controllers/ItemController.php
 nano ./resources/views/items/create.blade.php
 nano ./resources/views/items/list.blade.php
-
 ./vendor/bin/sail npm run dev
 
+nano ./app/Http/Controllers/ItemController.php
 nano ./resources/views/items/show.blade.php
 nano ./app/Providers/AuthServiceProvider.php
 nano ./config/app.php
 ./vendor/bin/sail php artisan make:policy UserPolicy
 ./vendor/bin/sail php artisan make:policy ItemPolicy
+./vendor/bin/sail npm run dev
 
-
+nano ./app/Http/Controllers/ItemController.php
+nano ./resources/views/items/edit.blade.php
+./vendor/bin/sail npm run dev
 ```
 
 ---

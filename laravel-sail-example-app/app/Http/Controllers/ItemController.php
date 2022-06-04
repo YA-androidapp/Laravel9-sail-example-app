@@ -41,15 +41,28 @@ class ItemController extends Controller
         return view('items.show', ['item' => $item]);
     }
 
-    public function edit()
+    public function edit(Item $item)
     {
+        return view('items.edit', ['item' => $item]);
     }
 
-    public function update()
+    public function update(Request $request, Item $item)
     {
+        $this->authorize('edit', $item);
+        $data = $request->validate([
+            'title' => ['required', 'string', 'max:100'],
+            'content' => ['required', 'string', 'max:400'],
+            'user_id' => ['integer', Rule::exists('users', 'id')]
+        ]);
+
+        $item->update($data);
+        return redirect()->route('items')->with('status', 'Updated.');
     }
 
-    public function destroy()
+    public function destroy(Item $item)
     {
+        $this->authorize('edit', $item);
+        $item->delete();
+        return redirect()->route('items')->with('status', 'Removed.');
     }
 }
